@@ -18,8 +18,14 @@ export class ClientsListComponent {
     this.selectedClient.emit(client);
   }
   
-  addClient()
-  {
-      this.selectedClient.emit(undefined);
-  }
+ addClient()
+{
+  const newClient: Client = {
+    id: 0,
+    name: '',
+    email: ''
+  };
+
+  this.selectedClient.emit(newClient);
+}
 }

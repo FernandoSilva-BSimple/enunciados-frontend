@@ -25,10 +25,19 @@ export class AppComponent {
 
   }
 
-  updateClient(client: Client) {
-  this.clients = this.clients.map(c => 
-    c.id === client.id ? { ...c, ...client } : c
-  );
-}
+ updateClient(client: Client) {
+  if (client.id === 0) {
+    const newId = this.clients.length > 0 ? Math.max(...this.clients.map(c => c.id)) + 1 : 1;
+    client.id = newId;
+    this.clients.push(client);
 
-}
+  } else {
+
+    this.clients = this.clients.map(c => 
+      c.id === client.id ? { ...c, ...client } : c
+    );
+  }
+
+  this.showForm = false;
+
+}}
