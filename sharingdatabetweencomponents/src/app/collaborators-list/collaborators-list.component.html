@@ -1,0 +1,17 @@
+<h3>Collaborators List</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let collaborator of collaborators">
+        <td>{{ collaborator.id }}</td>
+        <td>{{ collaborator.name }}</td>
+        <button (click)="selectedCollaborator(collaborator.id)">Details</button>
+    </tr>
+  </tbody>
+</table>

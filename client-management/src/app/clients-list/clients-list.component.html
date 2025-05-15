@@ -1,0 +1,24 @@
+<div class="clients-list-container">
+    <h2>Clients List</h2>
+
+    <table class="clients-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of clients">
+                <td>{{client.name}}</td>
+                <td>{{client.email}}</td>
+                <td>
+                    <button (click)="selectClient(client)" class="edit-form-button">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button (click)="addClient()" class="add-form-button">Add Client</button>
+    
+</div>

@@ -1,0 +1,4 @@
+<app-clients-list [clients]="clients" (selectedClient)="openForm($event)" ></app-clients-list>
+
+<app-clients-form   *ngIf="showForm"
+[client]="selectedClient" (clientSaved)="updateClient($event)"></app-clients-form>

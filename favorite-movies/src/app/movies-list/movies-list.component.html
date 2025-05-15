@@ -1,0 +1,19 @@
+<h2>Movies List</h2>
+<div class="movies-list-container">
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movie of movies">
+            <td>{{movie.id}}</td>
+            <td>{{movie.name}}</td>
+            <td>
+                <button (click)="toggleFavoriteMovie(movie)">{{movie.isFavorite ? 'Remove from favs' : 'Add to favs'}}</button>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,15 @@
+<div class="client-form-container" *ngIf="clientForm" [formGroup]="clientForm">
+  <h2>Client Details</h2>
+  <div class="details">
+    <div class="details-item">
+      <label>Name:</label>
+      <input type="text" formControlName="name" />
+    </div>
+    <div class="details-item">
+      <label>Email:</label>
+      <input type="email" formControlName="email" />
+    </div>
+  </div>
+
+  <button type="button" (click)="save()">Save</button>
+</div>

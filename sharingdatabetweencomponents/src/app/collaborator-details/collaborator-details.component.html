@@ -1,0 +1,18 @@
+<div class="colaborator-details">
+  <h2>Colaborator Details</h2>
+  @if(collaborator) {
+  <form>
+    <div>
+      <label for="id">Id:</label>
+      <input id="id" type="text" [value]="collaborator.id" readonly/>
+    </div>
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" name="1" type="text" [(ngModel)]="collaborator.name"/>
+    </div>
+  </form>
+}
+@else {
+  <p>No collaborator selected.</p>
+}
+</div>

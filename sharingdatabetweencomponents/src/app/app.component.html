@@ -1,0 +1,44 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+
+
+  body {
+    counter-reset: h2;
+  }
+  .h2-like::before {
+    counter-increment: h2;
+    /* content: counter(h2) ". "; */
+    font-weight: bold;
+    margin-right: 0.5em;
+  }
+
+  .h2-like {
+    font-size: 1.5em; /* Approx. h2 size */
+    font-weight: bold;
+    display: inline-block;
+  }
+</style>
+
+<h1>Examples</h1>
+
+<details>
+  <summary><span class="h2-like">&commat;Input & &commat;Output</span></summary>
+  <ul>
+    <li>This example uses the `app-collaborators-list` and `app-collaborator-details` components together.</li>
+    <li>`app-component` communicates with them through &commat;Input and &commat;Output.</li>
+    <li>The `app-collaborators-list` component displays a list of collaborators, and when a collaborator is selected, it emits an event that is handled by the parent component to update the `selectedCollaborator` property. The `app-collaborator-details` component then displays the details of the selected collaborator.</li>
+    <li>Because the `collaborator` property is passed to the `app-collaborator-details` component, it can be used to populate the form. In such case, if the value of `name` property is updated in the form, its value is reflected automatically in the list. </li>
+  </ul>
+
+  <app-collaborators-list [collaborators]="collaborators" (collaboratorSelected)="selectCollaborator($event)"></app-collaborators-list>
+  <app-collaborator-details [collaborator]="selectedCollaborator"></app-collaborator-details>
+
+</details>
